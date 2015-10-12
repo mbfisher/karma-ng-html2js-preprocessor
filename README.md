@@ -113,6 +113,26 @@ module.exports = function(config) {
 }
 ```
 
+### RequireJS Support
+
+If you use RequireJS to load angular and it is not globally available:
+
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    // ...
+
+    ngHtml2JsPreprocessor: {
+      // ...
+      enableRequireJs: true,
+      requireJsAngularId: 'myAngular' // defaults to 'angular'
+    }
+})
+}
+```
+
+This will wrap the module invocation in a `require` block which loads angular.
 
 ## How does it work ?
 
